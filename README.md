@@ -6,7 +6,7 @@
 join for exciting hackathon compition for incrdible prizes
 
 ## 🎨 Tech Stack  
-- **Frontend:** HTML, CSS, JavaScript (or any framework used)  
+- **Frontend:** HTML, CSS, JavaScript ,tailwind,typescipt(tsx) 
 - **Backend:** [Flask, Node.js, etc.]  
 - **Database:** PostgreSQL  
 
