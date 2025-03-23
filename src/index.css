@@ -1,0 +1,187 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Update the CSS variables in the :root section */
+@layer base {
+  :root {
+    --background: 217 33% 17%;  /* Dark blue background */
+    --foreground: 210 40% 98%;  /* Light text */
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 48%;     /* Bright blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 25%;
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+  }
+}
+
+/* Update component styles */
+@layer components {
+  .hackathon-section {
+    @apply pb-20 pt-16 px-6 sm:px-12 md:px-16 max-w-7xl mx-auto bg-slate-900 text-slate-100;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-display font-bold tracking-tight mb-2 text-cyan-200;
+  }
+
+  .section-tag {
+    @apply text-sm font-medium text-cyan-300 bg-cyan-900/30 rounded-full py-1 px-3 mb-3 inline-block;
+  }
+
+  .glass-card {
+    @apply bg-slate-800/90 backdrop-blur-lg border border-slate-700/20 rounded-2xl shadow-sm;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+  }
+  
+  /* Terminal Styles */
+  .terminal {
+    @apply bg-hackathon-terminal-bg text-hackathon-terminal-text rounded-xl font-mono shadow-terminal overflow-hidden;
+  }
+  
+  .terminal-header {
+    @apply bg-black/30 p-3 flex items-center;
+  }
+  
+  .terminal-body {
+    @apply p-4 overflow-y-auto;
+  }
+  
+  .terminal-line {
+    @apply flex items-start mb-1.5;
+  }
+  
+  .terminal-prompt {
+    @apply text-hackathon-terminal-accent font-medium mr-2;
+  }
+  
+  .terminal-command {
+    @apply text-hackathon-terminal-command;
+  }
+  
+  .terminal-output {
+    @apply pl-5 text-hackathon-terminal-text opacity-80;
+  }
+  
+  .terminal-success {
+    @apply text-hackathon-terminal-success;
+  }
+  
+  .terminal-error {
+    @apply text-hackathon-terminal-error;
+  }
+  
+  .terminal-typing {
+    @apply inline-block overflow-hidden whitespace-nowrap;
+    animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  /* 3D Card Effects */
+  .card-3d-container {
+    @apply perspective-1000 w-full h-full transition-all duration-700 cursor-pointer;
+  }
+  
+  .card-3d {
+    @apply bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl shadow-3d 
+           relative w-full h-full transition-all duration-500 transform-style-3d;
+  }
+  
+  .card-3d:hover {
+    @apply shadow-3d-hover translate-y-[-10px] rotate-y-10;
+  }
+  
+  .card-3d-content {
+    @apply p-6 backface-hidden;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .rotate-y-10 {
+    transform: rotateY(10deg);
+  }
+  
+  .dark-terminal-theme {
+    @apply bg-gradient-to-br from-[#1A1F2C] to-[#222] text-hackathon-terminal-text;
+  }
+  
+  /* Glowing Elements */
+  .glow-text {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+  }
+  
+  .glow-button {
+    @apply relative overflow-hidden;
+    box-shadow: 0 0 10px 3px rgba(0, 113, 227, 0.3);
+  }
+  
+  .glow-button:hover {
+    box-shadow: 0 0 20px 5px rgba(0, 113, 227, 0.5);
+  }
+  
+  .glow-button::before {
+    @apply content-[''] absolute -top-10 -left-10 w-20 h-20 bg-white/30 rounded-full transition-all duration-1000 opacity-50;
+  }
+  
+  .glow-button:hover::before {
+    @apply -top-5 -left-5 opacity-100;
+  }
+  
+  /* Matrix Like Animation */
+  .matrix-bg {
+    @apply relative overflow-hidden before:content-[''] before:absolute before:inset-0 
+           before:bg-[url('/grid.svg')] before:bg-center before:opacity-10 before:animate-subtle-float;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: currentColor; }
+}
