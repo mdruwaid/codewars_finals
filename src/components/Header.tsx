@@ -40,19 +40,20 @@ const Header = () => {
         scrolled ? 'bg-slate-900/90 backdrop-blur-md shadow-md' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
-            <div className="flex items-center space-x-3">
+      {/* Logo Section */}
+      <div className="w-full border-b border-slate-700/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <img 
                 src="/bti-logo.png" 
                 alt="BTI Logo" 
-                className="h-12 sm:h-20 w-auto" 
+                className="h-10 sm:h-20 w-auto" 
               />
               <img 
                 src="/iic-logo.png" 
                 alt="IIC Logo" 
-                className="h-12 sm:h-20 w-auto" 
+                className="h-10 sm:h-20 w-auto" 
               />
               <div className="hidden lg:block">
                 <img 
@@ -63,7 +64,12 @@ const Header = () => {
               </div>
             </div>
           </div>
-          
+        </div>
+      </div>
+
+      {/* Navigation Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-end items-center py-2">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -74,7 +80,7 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex space-x-6 items-center mr-[-4rem]">
+          <nav className="hidden lg:flex space-x-6 items-center">
             <button 
               onClick={() => scrollToSection('overview')}
               className="text-slate-300 hover:text-cyan-300 text-base font-medium transition-colors"

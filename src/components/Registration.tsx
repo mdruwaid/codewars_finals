@@ -48,17 +48,17 @@ const Registration = () => {
                 <input 
                   type="text" 
                   required
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-white"
+                  className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter your team name"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-black mb-1">Team Leader Name</label>
+                <label className="block text-sm font-medium text-white mb-1">Team Leader Name</label>
                 <input 
                   type="text" 
                   required
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500"
+                  className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter team leader's full name"
                 />
               </div>
@@ -68,7 +68,7 @@ const Registration = () => {
                 <input 
                   type="email" 
                   required
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500"
+                  className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter contact email"
                 />
               </div>
@@ -78,7 +78,7 @@ const Registration = () => {
                 <input 
                   type="tel" 
                   required
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500"
+                  className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter contact phone number"
                 />
               </div>
@@ -184,7 +184,7 @@ const Registration = () => {
               </h3>
               <div className="text-center space-y-2">
                 <p className="text-xl font-semibold text-slate-100 drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
-                  Mrs. Nivetha
+                  K. Nivetha
                 </p>
                 <p className="text-lg text-cyan-200">
                   Assistant Professor
