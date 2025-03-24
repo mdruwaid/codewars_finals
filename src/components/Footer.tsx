@@ -1,8 +1,8 @@
 
-import React from 'react';
+import type { FC } from 'react';
 import { ArrowUp } from 'lucide-react';
 
-const Footer = () => {
+const Footer: FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -11,23 +11,36 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-slate-100 py-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="col-span-1 md:col-span-2">
+    <footer className="bg-slate-900 text-slate-100 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* First column - Logo and social links */}
+          <div className="col-span-1 sm:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src="/bti-logo.png" 
+                alt="BTI Logo" 
+                className="h-8 w-auto" 
+              />
+              <img 
+                src="/iic-logo.png" 
+                alt="IIC Logo" 
+                className="h-8 w-auto" 
+              />
+            </div>
             <div className="flex items-center mb-4">
               <img 
                 src="/bti-logo.png" 
                 alt="BTI Logo" 
                 className="h-8 w-auto mr-3" 
               />
-              <span className="font-display text-xl font-medium text-cyan-200">CODEWARS 2025</span>
+              <span className="font-display text-lg sm:text-xl font-medium text-cyan-200">CODEWARS 2025</span>
             </div>
-            <p className="text-slate-300 mb-6 max-w-md">
+            <p className="text-slate-300 mb-6 max-w-md text-sm sm:text-base">
               Join us for an exciting hackathon experience where you can showcase your skills, 
               collaborate with peers, and win amazing prizes.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-8 sm:mb-0">
               <a 
                 href="https://www.facebook.com/BTIBANGALORE.ORG/" 
                 target="_blank" 
@@ -64,9 +77,10 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          {/* Quick Links column */}
+          <div className="space-y-3">
             <h3 id="quick-links-heading" className="text-lg font-medium mb-4 text-cyan-200">Quick Links</h3>
-            <ul className="space-y-2" aria-labelledby="quick-links-heading">
+            <ul className="space-y-2.5" aria-labelledby="quick-links-heading">
               <li>
                 <a 
                   href="#overview" 
@@ -115,9 +129,10 @@ const Footer = () => {
             </ul>
           </div>
           
-          <div>
+          {/* Contact column */}
+          <div className="space-y-3">
             <h3 className="text-lg font-medium mb-4 text-cyan-200">Contact Us</h3>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2.5 text-slate-300 text-sm sm:text-base">
               <li>Artificial Intelligence And Machine Learning Department</li>
               <li>Bangalore Tehcnological Institute, Kodthi Road</li>
               <li>Bengaluru, Karnataka - 560035</li>
@@ -127,9 +142,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 text-sm mb-4 md:mb-0">
-            © 2025 CCODEWARS. All rights reserved.
+        {/* Footer bottom */}
+        <div className="border-t border-slate-700 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p className="text-slate-400 text-sm">
+            © 2025 CODEWARS. All rights reserved.
           </p>
           
           <button 

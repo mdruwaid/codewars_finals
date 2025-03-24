@@ -54,7 +54,7 @@ const Registration = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-white mb-1">Team Leader Name</label>
+                <label className="block text-sm font-medium text-black mb-1">Team Leader Name</label>
                 <input 
                   type="text" 
                   required
@@ -164,12 +164,12 @@ const Registration = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="font-medium text-slate-200 min-w-28">Location:</span>
-                  <span className="text-slate-300">AIML Department, Main Building,BTI</span>
+                  <span className="text-slate-300">CE Department, Main Building,BTI</span>
                 </li>
               </ul>
               
               <a 
-                href="https://chat.whatsapp.com/your-group-link" 
+                href="https://chat.whatsapp.com/CfMi4rE4sqL2k4CSP2wLaV" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="mt-6 block w-full bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition-all font-medium"
@@ -190,7 +190,7 @@ const Registration = () => {
                   Assistant Professor
                 </p>
                 <p className="text-slate-300">
-                  AIML Department, BTI
+                  CE Department, BTI
                 </p>
               </div>
             </div>

@@ -93,17 +93,17 @@ const Rules = () => {
                 <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
                   <span className="text-green-600 text-sm">✓</span>
                 </div>
-                <span>Participants should bring their own laptops with necessary software installed</span>
+                <span>Systems will provided in the campus</span>
               </li>
               <li className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
+                <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                  <span className="text-red-600 text-sm">✕</span>
                 </div>
                 <span>No internet access will be provided during the competition.</span>
               </li>
               <li className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
+                <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                  <span className="text-red-600 text-sm">✕</span>
                 </div>
                 <span>Food will not be provided during the hackathon; participants must arrange their own meals or purchase food from the canteen.</span>
               </li>
