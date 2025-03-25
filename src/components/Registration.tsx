@@ -64,7 +64,7 @@ const Registration = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-white mb-1">Email Address</label>
+                <label className="block text-sm font-medium text-white mb-1">Team Leader Email</label>
                 <input 
                   type="email" 
                   required
@@ -83,13 +83,48 @@ const Registration = () => {
                 />
               </div>
               
-              <div>
-                <label className="block text-sm font-medium text-white mb-1">Team Members (including leader)</label>
-                <textarea 
-                  required
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-white h-24"
-                  placeholder="List all 4 team members with their names and student IDs"
-                ></textarea>
+              <div className="space-y-4">
+                <label className="block text-sm font-medium text-white mb-3">Team Members</label>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 1 (Leader)</label>
+                  <input 
+                    type="text" 
+                    required
+                    className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
+                    placeholder="Enter name (Department)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 2</label>
+                  <input 
+                    type="text" 
+                    required
+                    className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
+                    placeholder="Enter name(Department)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 3</label>
+                  <input 
+                    type="text" 
+                    required
+                    className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
+                    placeholder="Enter name(Department)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 4</label>
+                  <input 
+                    type="text" 
+                    required
+                    className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
+                    placeholder="Enter name(Department)"
+                  />
+                </div>
               </div>
               
               <div className="flex items-start">

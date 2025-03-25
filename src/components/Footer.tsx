@@ -133,11 +133,12 @@ const Footer: FC = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-medium mb-4 text-cyan-200">Contact Us</h3>
             <ul className="space-y-2.5 text-slate-300 text-sm sm:text-base">
+              <li>K Nivetha</li>
               <li>Computer Engineering Department</li>
               <li>Bangalore Tehcnological Institute, Kodathi Road</li>
               <li>Bengaluru, Karnataka - 560035</li>
-              <li className="pt-2">hackathon@college.edu</li>
-              <li>+91 98765 43210</li>
+              <li className="pt-2">nivetha.ravi91@gmail.com</li>
+              <li>+91 98808 45652</li>
             </ul>
           </div>
         </div>

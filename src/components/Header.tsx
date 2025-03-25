@@ -48,12 +48,12 @@ const Header = () => {
               <img 
                 src="/bti-logo.png" 
                 alt="BTI Logo" 
-                className="h-10 sm:h-20 w-auto" 
+                className="h-20 sm:h-20 w-auto" 
               />
               <img 
                 src="/iic-logo.png" 
                 alt="IIC Logo" 
-                className="h-10 sm:h-20 w-auto" 
+                className="h-20 sm:h-20 w-auto" 
               />
               <div className="hidden lg:block">
                 <img 
