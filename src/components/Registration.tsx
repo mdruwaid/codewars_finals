@@ -5,16 +5,64 @@ import { Check } from 'lucide-react';
 
 const Registration = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    teamName: '',
+    leaderName: '',
+    leaderEmail: '',
+    phoneNumber: '',
+    teamMember1: '',
+    teamMember2: '',
+    teamMember3: '',
+    teamMember4: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would handle form submission here
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 3000);
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyfzWlsXbQychxWdmACNOEDmk2V8skeN7-aHIDhEygKJNi_bH1JcKWl6CT8soNiKNIe0Q/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(formData)
+      });
+
+      setFormSubmitted(true);
+      alert('Registration successful! Thank you for registering.');
+      setFormData({
+        teamName: '',
+        leaderName: '',
+        leaderEmail: '',
+        phoneNumber: '',
+        teamMember1: '',
+        teamMember2: '',
+        teamMember3: '',
+        teamMember4: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Error submitting form. Please try again.');
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 3000);
+    }
   };
 
+  // Update all input fields to include name and onChange
   return (
     <section id="register" className="hackathon-section">
       <div className="max-w-7xl mx-auto">
@@ -47,6 +95,9 @@ const Registration = () => {
                 <label className="block text-sm font-medium text-white mb-1">Team Name</label>
                 <input 
                   type="text" 
+                  name="teamName"
+                  value={formData.teamName}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter your team name"
@@ -57,6 +108,9 @@ const Registration = () => {
                 <label className="block text-sm font-medium text-white mb-1">Team Leader Name</label>
                 <input 
                   type="text" 
+                  name="leaderName"
+                  value={formData.leaderName}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter team leader's full name"
@@ -67,6 +121,9 @@ const Registration = () => {
                 <label className="block text-sm font-medium text-white mb-1">Team Leader Email</label>
                 <input 
                   type="email" 
+                  name="leaderEmail"
+                  value={formData.leaderEmail}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter contact email"
@@ -77,6 +134,9 @@ const Registration = () => {
                 <label className="block text-sm font-medium text-white mb-1">Phone Number</label>
                 <input 
                   type="tel" 
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                   placeholder="Enter contact phone number"
@@ -90,6 +150,9 @@ const Registration = () => {
                   <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 1 (Leader)</label>
                   <input 
                     type="text" 
+                    name="teamMember1"
+                    value={formData.teamMember1}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                     placeholder="Enter name (Department)"
@@ -100,9 +163,12 @@ const Registration = () => {
                   <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 2</label>
                   <input 
                     type="text" 
+                    name="teamMember2"
+                    value={formData.teamMember2}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name(Department)"
+                    placeholder="Enter name (Department)"
                   />
                 </div>
 
@@ -110,9 +176,12 @@ const Registration = () => {
                   <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 3</label>
                   <input 
                     type="text" 
+                    name="teamMember3"
+                    value={formData.teamMember3}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name(Department)"
+                    placeholder="Enter name (Department)"
                   />
                 </div>
 
@@ -120,9 +189,12 @@ const Registration = () => {
                   <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 4</label>
                   <input 
                     type="text" 
+                    name="teamMember4"
+                    value={formData.teamMember4}
+                    onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name(Department)"
+                    placeholder="Enter name (Department)"
                   />
                 </div>
               </div>
@@ -141,9 +213,25 @@ const Registration = () => {
               
               <button 
                 type="submit"
-                className="w-full bg-cyan-600 text-white py-3 rounded-lg hover:bg-cyan-700 transition-all font-medium"
+                disabled={isLoading}
+                className="w-full bg-cyan-600 text-white py-3 rounded-lg hover:bg-cyan-700 transition-all font-medium disabled:bg-cyan-800 disabled:cursor-not-allowed flex items-center justify-center"
               >
-                Register Now
+                {isLoading ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Registering...
+                  </>
+                ) : formSubmitted ? (
+                  <>
+                    <Check className="w-5 h-5 mr-2" />
+                    Registration Complete
+                  </>
+                ) : (
+                  'Register Now'
+                )}
               </button>
             </form>
           </motion.div>
