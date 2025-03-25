@@ -42,26 +42,24 @@ const Header = () => {
     >
       {/* Logo Section */}
       <div className="w-full border-b border-slate-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4 py-2 sm:py-3">
           <div className="flex items-center justify-center">
-            <div className="flex items-center space-x-3 sm:space-x-4">
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
               <img 
                 src="/bti-logo.png" 
                 alt="BTI Logo" 
-                className="h-20 sm:h-20 w-auto" 
+                className="h-8 sm:h-14 md:h-16 lg:h-20 w-auto object-contain" 
               />
               <img 
                 src="/iic-logo.png" 
                 alt="IIC Logo" 
-                className="h-20 sm:h-20 w-auto" 
+                className="h-8 sm:h-14 md:h-16 lg:h-20 w-auto object-contain" 
               />
-              <div className="hidden lg:block">
-                <img 
-                  src="/accreditation-logos.png" 
-                  alt="VTU, AICTE, NAAC, and ISO Accreditations" 
-                  className="h-20 w-auto"
-                />
-              </div>
+              <img 
+                src="/accreditation-logos.png" 
+                alt="VTU, AICTE, NAAC, and ISO Accreditations" 
+                className="h-6 sm:h-14 md:h-16 lg:h-20 w-auto object-contain"
+              />
             </div>
           </div>
         </div>
