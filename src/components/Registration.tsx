@@ -25,12 +25,44 @@ const Registration = () => {
     }));
   };
   
+  const [error, setError] = useState('');
+  
+  const checkDuplicates = async () => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyfzWlsXbQychxWdmACNOEDmk2V8skeN7-aHIDhEygKJNi_bH1JcKWl6CT8soNiKNIe0Q/exec?action=check', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify({
+          email: formData.leaderEmail,
+          phone: formData.phoneNumber
+        })
+      });
+
+      return true;
+    } catch (error) {
+      console.error('Error checking duplicates:', error);
+      return false;
+    }
+  };
+
+  // Remove the standalone error JSX fragment here
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
     
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyfzWlsXbQychxWdmACNOEDmk2V8skeN7-aHIDhEygKJNi_bH1JcKWl6CT8soNiKNIe0Q/exec', {
+      const isDuplicate = await checkDuplicates();
+      if (isDuplicate) {
+        setError('This email or phone number has already been registered. Please use different credentials.');
+        setIsLoading(false);
+        return;
+      }
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyVMLGp1XRWEbvD9h0W-klUSRkG944FFr8Dj43gDWVeBjxCCv34MtHuDAE6hBttl4fbXQ/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,14 +85,18 @@ const Registration = () => {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Error submitting form. Please try again.');
+      setError('Error submitting form. Please try again.');
     } finally {
       setIsLoading(false);
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 3000);
     }
   };
+
+  // Add this near the submit button to display errors
+  {error && (
+    <div className="text-red-500 text-sm mb-4 bg-red-100/10 p-3 rounded-lg">
+      {error}
+    </div>
+  )}
 
   // Update all input fields to include name and onChange
   return (
@@ -73,6 +109,11 @@ const Registration = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          {error && (
+            <div className="text-red-500 text-sm mb-4 bg-red-100/10 p-3 rounded-lg">
+              {error}
+            </div>
+          )}
           <span className="section-tag bg-hackathon-primary/10">Join Us</span>
           <h2 className="section-heading">Register Your Team</h2>
           <p className="text-hackathon-secondary/80 max-w-2xl mx-auto">
@@ -230,6 +271,12 @@ const Registration = () => {
                   'Register Now'
                 )}
               </button>
+              
+              {error && (
+                <div className="text-red-500 text-sm mt-4 bg-red-100/10 p-3 rounded-lg">
+                  {error}
+                </div>
+              )}
             </form>
           </motion.div>
           
