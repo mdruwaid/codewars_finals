@@ -20,10 +20,28 @@ const Registration = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    
+    if (name === 'phoneNumber') {
+      // Only allow numbers
+      const numbersOnly = value.replace(/[^\d]/g, '');
+      
+      // Set error if phone number length is not 10
+      if (numbersOnly.length !== 0 && numbersOnly.length !== 10) {
+        setError('Phone number must be exactly 10 digits');
+      } else {
+        setError('');
+      }
+      
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: numbersOnly
+      }));
+    } else {
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -191,13 +209,12 @@ const Registration = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 2</label>
+                  <label className="block text-sm font-medium text-slate-300 mb-1">Team Member 2 (Optional)</label>
                   <input 
                     type="text" 
                     name="teamMember2"
                     value={formData.teamMember2}
                     onChange={handleChange}
-                    required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
                     placeholder="Enter name (Sem and Department) - Optional"
                   />
@@ -240,6 +257,12 @@ const Registration = () => {
                 </label>
               </div>
               
+              {error && (
+                <div className="text-red-500 text-sm mt-4 bg-red-100/10 p-3 rounded-lg">
+                  {error}
+                </div>
+              )}
+              
               <button 
                 type="submit"
                 disabled={isLoading}
@@ -263,11 +286,7 @@ const Registration = () => {
                 )}
               </button>
               
-              {error && (
-                <div className="text-red-500 text-sm mt-4 bg-red-100/10 p-3 rounded-lg">
-                  {error}
-                </div>
-              )}
+              {/* Remove the duplicate error message from here */}
             </form>
           </motion.div>
           
@@ -281,7 +300,7 @@ const Registration = () => {
                   </div>
                   <div>
                     <span className="block font-medium text-slate-200">Registration Deadline</span>
-                    <span className="text-slate-300">April 15, 2025 at 11:59 PM</span>
+                    <span className="text-slate-300">April 17, 2025 at 11:59 PM</span>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -290,7 +309,7 @@ const Registration = () => {
                   </div>
                   <div>
                     <span className="block font-medium text-slate-200">Team Confirmation</span>
-                    <span className="text-slate-300">April 16, 2025</span>
+                    <span className="text-slate-300">April 18, 2025</span>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -299,7 +318,7 @@ const Registration = () => {
                   </div>
                   <div>
                     <span className="block font-medium text-slate-200">Hackathon Day</span>
-                    <span className="text-slate-300">April 19, 2025</span>
+                    <span className="text-slate-300">April 21, 2025</span>
                   </div>
                 </li>
               </ul>

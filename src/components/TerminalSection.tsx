@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Code, FileCode, Laptop, Server, Database, Braces } from 'lucide-react';
+import { Code, Laptop, Database } from 'lucide-react';
 
 const TerminalSection = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
