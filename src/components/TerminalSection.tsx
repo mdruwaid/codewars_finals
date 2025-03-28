@@ -118,12 +118,12 @@ const TerminalSection = () => {
               { 
                 icon: <Database className="w-6 h-6 text-cyan-400" />, 
                 title: "Database Management", 
-                description: "Design and optimize database schemas and queries." 
+                description: "Design and optimize MySQL database schemas and queries for efficient data handling." 
               },
               { 
                 icon: <Laptop className="w-6 h-6 text-cyan-400" />, 
-                title: "User Interface", 
-                description: "Create intuitive and responsive user interfaces." 
+                title: "Front-end Development", 
+                description: "Create intuitive and responsive web interfaces using modern frameworks." 
               },
               { 
                 icon: <Database className="w-6 h-6 text-cyan-400" />, 

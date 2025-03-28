@@ -35,14 +35,14 @@ const TeamComposition = () => {
             </div>
             <h3 className="text-xl font-semibold text-cyan-400 mb-2">Team Size</h3>
             <p className="text-hackathon-secondary/70 mb-4">
-              Each participating team must consist of exactly four members. No more, no less.
+              Each participating team can have up to four members. Individual participation is also welcome.
             </p>
             <ul className="space-y-2 text-hackathon-secondary/70 flex-grow">
               <li className="flex items-start">
                 <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
                   <span className="text-green-600 text-sm">✓</span>
                 </span>
-                <span>Four students working collaboratively</span>
+                <span>Flexible team size (1-4 members)</span>
               </li>
               <li className="flex items-start">
                 <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
@@ -55,6 +55,12 @@ const TeamComposition = () => {
                   <span className="text-green-600 text-sm">✓</span>
                 </span>
                 <span>All team members must be from our college</span>
+              </li>
+              <li className="flex items-start">
+                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
+                  <span className="text-green-600 text-sm">✓</span>
+                </span>
+                <span>Team must include members from different years (not all from same year)</span>
               </li>
             </ul>
           </motion.div>

@@ -52,7 +52,7 @@ const Eligibility = () => {
                   <span className="text-green-600 text-sm">✓</span>
                 </span>
                 <div>
-                  <span className="font-medium text-cyan-400">Any Branch:</span> Engineering, science, arts, or any other discipline
+                  <span className="font-medium text-cyan-400">Any Branch:</span> of Engineering
                 </div>
               </li>
               <li className="flex items-start">

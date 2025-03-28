@@ -6,6 +6,7 @@ import { Check } from 'lucide-react';
 const Registration = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     teamName: '',
     leaderName: '',
@@ -24,51 +25,48 @@ const Registration = () => {
       [name]: value
     }));
   };
-  
-  const [error, setError] = useState('');
-  
-  const checkDuplicates = async () => {
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyfzWlsXbQychxWdmACNOEDmk2V8skeN7-aHIDhEygKJNi_bH1JcKWl6CT8soNiKNIe0Q/exec?action=check', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors',
-        body: JSON.stringify({
-          email: formData.leaderEmail,
-          phone: formData.phoneNumber
-        })
-      });
 
-      return true;
-    } catch (error) {
-      console.error('Error checking duplicates:', error);
-      return false;
-    }
-  };
-
-  // Remove the standalone error JSX fragment here
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
     
     try {
-      const isDuplicate = await checkDuplicates();
-      if (isDuplicate) {
-        setError('This email or phone number has already been registered. Please use different credentials.');
-        setIsLoading(false);
-        return;
-      }
-
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyVMLGp1XRWEbvD9h0W-klUSRkG944FFr8Dj43gDWVeBjxCCv34MtHuDAE6hBttl4fbXQ/exec', {
+      // First check for duplicates
+      const checkDuplicateResponse = await fetch('https://script.google.com/macros/s/AKfycbwTIlA7E1QLan7MsKYTwDOyNj1CCtJxtLbQszuo0m7ov_9TicrmM78rVVoLRjIKf7Pe/exec', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         mode: 'no-cors',
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          action: 'checkDuplicate',
+          email: formData.leaderEmail,
+          phone: formData.phoneNumber
+        })
+      });
+
+      // Wait a bit to ensure the check is complete
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Proceed with registration
+      const formDataWithAction = {
+        ...formData,
+        action: 'register',
+        registrationTime: new Date().toLocaleString('en-IN', { 
+          timeZone: 'Asia/Kolkata',
+          dateStyle: 'full',
+          timeStyle: 'long'
+        })
+      };
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwTIlA7E1QLan7MsKYTwDOyNj1CCtJxtLbQszuo0m7ov_9TicrmM78rVVoLRjIKf7Pe/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify(formDataWithAction)
       });
 
       setFormSubmitted(true);
@@ -85,20 +83,12 @@ const Registration = () => {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      setError('Error submitting form. Please try again.');
+      setError('Registration failed. Please try again or contact the coordinator.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Add this near the submit button to display errors
-  {error && (
-    <div className="text-red-500 text-sm mb-4 bg-red-100/10 p-3 rounded-lg">
-      {error}
-    </div>
-  )}
-
-  // Update all input fields to include name and onChange
   return (
     <section id="register" className="hackathon-section">
       <div className="max-w-7xl mx-auto">
@@ -196,7 +186,7 @@ const Registration = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name (Department)"
+                    placeholder="Enter name (Sem and Department)"
                   />
                 </div>
 
@@ -207,8 +197,9 @@ const Registration = () => {
                     name="teamMember2"
                     value={formData.teamMember2}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name (Department) - Optional"
+                    placeholder="Enter name (Sem and Department) - Optional"
                   />
                 </div>
 
@@ -220,7 +211,7 @@ const Registration = () => {
                     value={formData.teamMember3}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name (Department) - Optional"
+                    placeholder="Enter name (Sem and Department) - Optional"
                   />
                 </div>
 
@@ -232,7 +223,7 @@ const Registration = () => {
                     value={formData.teamMember4}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 bg-black"
-                    placeholder="Enter name (Department) - Optional"
+                    placeholder="Enter name (Sem and Department) - Optional"
                   />
                 </div>
               </div>
