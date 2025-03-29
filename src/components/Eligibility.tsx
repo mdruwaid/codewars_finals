@@ -22,9 +22,16 @@ const Eligibility = () => {
         
         <div className="flex justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 0.6,
+              ease: "easeOut"
+            }}
+            whileHover={{ 
+              scale: 1.02,
+              transition: { duration: 0.2 }
+            }}
             viewport={{ once: true }}
             className="glass-card p-8 w-full max-w-2xl"
           >
@@ -32,42 +39,35 @@ const Eligibility = () => {
               <div className="bg-hackathon-primary/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                 <GraduationCap className="w-6 h-6 text-cyan-400" />
               </div>
-              <h3 className="text-xl font-semibold text-cyan-400">Student Status</h3>
+              <h3 className="text-2xl font-semibold text-cyan-400">Student Status</h3>
             </div>
 
-            <ul className="space-y-3 text-slate-300">
-              <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
-                </span>
-                <div>
-                  <span className="font-medium text-cyan-400">Who Can Participate:</span> Students of BTI college
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
-                </span>
-                <div>
-                  <span className="font-medium text-cyan-400">Semester:</span> II, IV, VI and VIII Sem
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
-                </span>
-                <div>
-                  <span className="font-medium text-cyan-400">Branch:</span> Any Branch of Engineering
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-green-600 text-sm">✓</span>
-                </span>
-                <div>
-                  <span className="font-medium text-cyan-400">Skill Levels:</span> Both beginners and experienced coders
-                </div>
-              </li>
+            <ul className="space-y-4 text-slate-300 text-lg">
+              {[
+                { title: "Who Can Participate", content: "Students of BTI college" },
+                { title: "Semester", content: "II, IV, VI and VIII Sem" },
+                { title: "Branch", content: "Any Branch of Engineering" },
+                { title: "Skill Levels", content: "Both beginners and experienced coders" }
+              ].map((item, index) => (
+                <motion.li
+                  key={item.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    duration: 0.3,
+                    delay: index * 0.1,
+                    ease: "easeOut"
+                  }}
+                  className="flex items-start"
+                >
+                  <span className="h-7 w-7 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                    <span className="text-green-600 text-base">✓</span>
+                  </span>
+                  <div>
+                    <span className="font-medium text-cyan-400">{item.title}:</span> {item.content}
+                  </div>
+                </motion.li>
+              ))}
             </ul>
           </motion.div>
         </div>
