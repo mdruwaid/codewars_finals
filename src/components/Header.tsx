@@ -104,7 +104,7 @@ const Header = () => {
               Prizes
             </button>
             <button 
-              onClick={() => scrollToSection('register')}
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdWQcLIw4-utw0_0yhlBWDd1vqJb2dvKPqSqnhmOpRRxmTW2g/viewform', '_blank')}
               className="bg-cyan-600 text-white px-5 py-2.5 rounded-full text-base font-medium hover:bg-cyan-700 transition-all"
             >
               Register Now
@@ -146,7 +146,7 @@ const Header = () => {
                 Prizes
               </button>
               <button 
-                onClick={() => scrollToSection('register')}
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdWQcLIw4-utw0_0yhlBWDd1vqJb2dvKPqSqnhmOpRRxmTW2g/viewform', '_blank')}
                 className="bg-cyan-600 text-white px-5 py-2.5 rounded-full text-base font-medium hover:bg-cyan-700 transition-all w-full"
               >
                 Register Now

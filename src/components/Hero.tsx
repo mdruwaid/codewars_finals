@@ -1,10 +1,21 @@
 
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, BookOpen } from 'lucide-react'; // Added BookOpen import
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  // Add scrollToSection function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 100,
+        behavior: 'smooth'
+      });
+    }
+  };
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -186,18 +197,13 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="flex flex-col sm:flex-row justify-center items-center gap-4"
           >
-            <a 
-              href="#register" 
-              className="bg-cyan-600 text-white px-8 py-3 rounded-full text-base font-medium hover:shadow-lg hover:bg-cyan-700 transition-all w-full sm:w-auto"
+            <button
+              onClick={() => scrollToSection('rules')}
+              className="px-6 py-3 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-all flex items-center justify-center gap-2"
             >
-              Register Your Team
-            </a>
-            <a 
-              href="#rules" 
-              className="bg-slate-800/80 text-slate-200 px-8 py-3 rounded-full text-base font-medium border border-slate-700 hover:shadow-md hover:bg-slate-700/80 transition-all w-full sm:w-auto"
-            >
+              <BookOpen className="w-5 h-5" />
               Read Guidelines
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>
