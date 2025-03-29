@@ -18,7 +18,7 @@ const Overview = () => {
     {
       icon: <Users className="w-6 h-6 text-cyan-400" />,
       title: "Team Formation",
-      description: "Your team should consist of four members, with an equal mix of seniors and juniors."
+      description: "Form a team of 1-4 members with a mix of seniors and juniors to enhance collaborative learning."
     },
     {
       icon: <Award className="w-6 h-6 text-cyan-400" />,

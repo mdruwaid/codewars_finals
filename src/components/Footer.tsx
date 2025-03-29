@@ -31,7 +31,7 @@ const Footer: FC = () => {
             </p>
             <div className="flex space-x-4 mb-8 sm:mb-0">
               <a 
-                href="https://www.facebook.com/people/BTI-Incubation-Centre/61568704182165/" 
+                href="https://www.facebook.com/BTIBANGALORE.ORG/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit our Facebook page"
@@ -53,7 +53,7 @@ const Footer: FC = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.youtube.com/@BTIBANGALOREINCUBATIONCENTRE" 
+                href="https://www.youtube.com/@PrincipalBti" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit our YouTube channel"
@@ -64,7 +64,7 @@ const Footer: FC = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/bti_incubation_centre/?hl=en" 
+                href="https://www.instagram.com/btibangalore/?hl=en" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit our Instagram page"

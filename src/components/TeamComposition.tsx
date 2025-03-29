@@ -35,7 +35,7 @@ const TeamComposition = () => {
             </div>
             <h3 className="text-xl font-semibold text-cyan-400 mb-2">Team Size</h3>
             <p className="text-hackathon-secondary/70 mb-4">
-              Each participating team can have up to four members. Individual participation is also welcome.
+              Teams must follow the composition guidelines to ensure balanced participation.
             </p>
             <ul className="space-y-2 text-hackathon-secondary/70 flex-grow">
               <li className="flex items-start">
@@ -49,12 +49,6 @@ const TeamComposition = () => {
                   <span className="text-green-600 text-sm">✓</span>
                 </span>
                 <span>Diverse skills across the team</span>
-              </li>
-              <li className="flex items-start">
-                <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
-                  <span className="text-green-600 text-sm">✓</span>
-                </span>
-                <span>All team members must be from our college</span>
               </li>
               <li className="flex items-start">
                 <span className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
