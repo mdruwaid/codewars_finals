@@ -65,7 +65,7 @@ const Eligibility = () => {
                   <span className="text-green-600 text-sm">✓</span>
                 </span>
                 <div>
-                  <span className="font-medium text-cyan-400">All Skill Levels:</span> Both beginners and experienced coders are encouraged
+                  <span className="font-medium text-cyan-400">Skill Levels:</span> Both beginners and experienced coders
                 </div>
               </li>
             </ul>
