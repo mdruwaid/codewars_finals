@@ -25,7 +25,7 @@ const LoadingFallback = () => (
 const Index = () => {
   useEffect(() => {
     // Update document title
-    document.title = "College Hackathon 2024";
+    document.title = "CodeWars 2025";
     
     // Improved smooth scroll functionality with proper cleanup
     const handleAnchorClick = (e: Event) => {
