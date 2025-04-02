@@ -39,7 +39,7 @@ const Eligibility = () => {
               <div className="bg-hackathon-primary/10 w-12 h-12 rounded-full flex items-center justify-center mr-4">
                 <GraduationCap className="w-6 h-6 text-cyan-400" />
               </div>
-              <h3 className="text-2xl font-semibold text-cyan-400">Student Status</h3>
+              <h3 className="text-2xl font-semibold text-cyan-400">Participants Status</h3>
             </div>
 
             <ul className="space-y-4 text-slate-300 text-lg">

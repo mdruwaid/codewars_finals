@@ -6,23 +6,13 @@ import { Users, Award, Calendar, Clock } from 'lucide-react';
 const Overview = () => {
   const features = [
     {
-      icon: <Users className="w-6 h-6 text-hackathon-primary" />,
-      title: "Team Collaboration",
-      description: "Form a team of four talented minds to tackle complex problems together."
-    },
-    {
-      icon: <Award className="w-6 h-6 text-hackathon-primary" />,
-      title: "Exciting Prizes",
-      description: "Win cash prizes up to ₹1000 and certificates for your achievements."
-    },
-    {
       icon: <Users className="w-6 h-6 text-cyan-400" />,
       title: "Team Formation",
       description: "Form a team of 1-4 members with a mix of seniors and juniors to enhance collaborative learning."
     },
     {
-      icon: <Award className="w-6 h-6 text-cyan-400" />,
-      title: "Rewards",
+      icon: <Award className="w-6 h-6 text-hackathon-primary" />,
+      title: "Exciting Prizes",
       description: "Win cash prizes up to ₹1000 and certificates for your achievements."
     },
     {

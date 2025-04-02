@@ -16,7 +16,7 @@ const ContactDetails = () => {
         </li>
         <li className="flex items-center gap-4">
           <span className="font-medium text-slate-200 w-24">Place:</span>
-          <span className="text-slate-300 text-lg">CE Department, BTI</span>
+          <span className="text-slate-300 text-lg">Computer Engineering Department, BTI</span>
         </li>
       </ul>
     </div>
