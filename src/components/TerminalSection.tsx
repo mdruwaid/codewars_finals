@@ -119,16 +119,17 @@ const TerminalSection = () => {
                 title: "Database Management", 
                 description: "Design and optimize MySQL database schemas and queries for efficient data handling." 
               },
+              
+              { 
+                icon: <Database className="w-6 h-6 text-cyan-400" />, 
+                title: "Data Structures", 
+                description: "Implement and optimize complex data structures." 
+              },
               { 
                 icon: <Laptop className="w-6 h-6 text-cyan-400" />, 
                 title: "Front-end Development", 
                 description: "Create intuitive and responsive web interfaces using modern frameworks." 
               },
-              { 
-                icon: <Database className="w-6 h-6 text-cyan-400" />, 
-                title: "Data Structures", 
-                description: "Implement and optimize complex data structures." 
-              }
             ].map((card, index) => (
               <motion.div
                 key={index}
