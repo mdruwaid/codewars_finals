@@ -39,15 +39,19 @@ const CompetitionFormat = () => {
             <ul className="space-y-2 text-slate-300 flex-grow">
               <li className="flex items-start">
                 <span className="text-cyan-400 mr-2">•</span>
-                <span><strong>Round 1:</strong> Core programming and algorithmic challenges</span>
+                <span><strong>Round 1:</strong> Basic coding challenges and problem-solving</span>
               </li>
               <li className="flex items-start">
                 <span className="text-hackathon-primary mr-2">•</span>
-                <span><strong>Round 2:</strong> Database implementation and optimization</span>
+                <span><strong>Round 2:</strong> Database Management System implementation</span>
               </li>
               <li className="flex items-start">
                 <span className="text-hackathon-primary mr-2">•</span>
-                <span><strong>Round 3:</strong> Front-end development and UI design</span>
+                <span><strong>Round 3:</strong> Data Structures and Algorithms challenges</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-hackathon-primary mr-2">•</span>
+                <span><strong>Round 4:</strong> Front-end development and UI design</span>
               </li>
             </ul>
           </motion.div>
