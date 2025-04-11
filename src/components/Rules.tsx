@@ -35,8 +35,7 @@ const Rules = () => {
             <div>
               <h3 className="text-xl font-semibold text-cyan-400 mb-1 drop-shadow-[0_0_3px_rgba(34,211,238,0.3)]">Code of Conduct</h3>
               <p className="text-slate-300">
-                The use of the internet, AI tools, or any form of copying is strictly prohibited. 
-                Any team found violating this rule will be immediately disqualified.
+                The use of the internet, AI tools is allowed
               </p>
             </div>
           </motion.div>
@@ -93,7 +92,7 @@ const Rules = () => {
                 <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
                   <span className="text-green-600 text-sm">✓</span>
                 </div>
-                <span>Systems will provided in the campus</span>
+                <span>It is compulsory to carry a laptop. If you do not have one, a system will be provided.</span>
               </li>
               <li className="flex items-start">
                 <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
@@ -107,12 +106,7 @@ const Rules = () => {
                 </div>
                 <span>Communication with other teams during the competition is not allowed</span>
               </li>
-              <li className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-red-100 flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                  <span className="text-red-600 text-sm">✕</span>
-                </div>
-                <span>Use of pre-written code or templates is strictly prohibited</span>
-              </li>
+             
             </ul>
             
             <div className="mt-8 p-4 bg-amber-50 rounded-lg border border-amber-100">
